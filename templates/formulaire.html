@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire - CreditAfrica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <h1>💳 CreditAfrica</h1>
+    </nav>
+
+    <section class="form-section">
+        <h2>Informations du client</h2>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-group">
+                <label>Âge</label>
+                <input type="number" name="age" min="18" max="109" required>
+            </div>
+
+            <div class="form-group">
+                <label>Revenu mensuel (FCFA)</label>
+                <input type="number" name="income" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ratio d'endettement (%)</label>
+                <input type="number" name="debt_ratio" 
+                       min="0" max="1" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label>Taux d'utilisation crédit revolving (%)</label>
+                <input type="number" name="revolving" 
+                       min="0" max="1" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nombre de crédits ouverts</label>
+                <input type="number" name="open_credits" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Prêts immobiliers</label>
+                <input type="number" name="real_estate" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Personnes à charge</label>
+                <input type="number" name="dependents" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Retards 30-59 jours (2 dernières années)</label>
+                <input type="number" name="retard_30" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Retards 60-89 jours (2 dernières années)</label>
+                <input type="number" name="retard_60" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label>Retards 90+ jours (2 dernières années)</label>
+                <input type="number" name="retard_90" min="0" required>
+            </div>
+
+            <button type="submit" class="btn">Calculer le score</button>
+
+        </form>
+    </section>
+
+</body>
+</html>

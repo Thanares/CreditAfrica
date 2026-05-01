@@ -1,0 +1,22 @@
+# Python
+_pycache_/
+*.py[cod]
+*.pkl
+*.egg-info/
+venv/
+env/
+
+# Data (trop lourd pour GitHub)
+data/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+
+.ipynb_checkpoints/
