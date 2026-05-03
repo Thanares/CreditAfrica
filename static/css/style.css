@@ -228,3 +228,51 @@ nav h1 {
     gap: 1rem;
     justify-content: center;
 }
+
+/* HISTORIQUE */
+.historique-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+.historique-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a1a2e;
+}
+
+.historique-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+.historique-table th {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.historique-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+}
+
+.historique-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.empty {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    margin: 3rem 0;
+}
