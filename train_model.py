@@ -4,7 +4,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-df = pd.read_csv('data/cs-training.csv')
+print("...STARTED TRAINING...")
+df = pd.read_csv('cs-training.csv')
 df = df.drop(columns=['Unnamed: 0'])
 df['MonthlyIncome'] = df['MonthlyIncome'].fillna(df['MonthlyIncome'].median())
 df['NumberOfDependents'] = df['NumberOfDependents'].fillna(df['NumberOfDependents'].median())
