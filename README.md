@@ -66,6 +66,11 @@ Lancer l'application :
 
 Ouvrir http://127.0.0.1:5000 dans le navigateur.
 
+### Dataset
+Telecharger le dataset depuis Kaggle:
+https://www.kaggle.com/c/GiveMeSomeCredit/data
+training.csv dans le dossier data/
+
 ---
 
 ## 🌍 Vision
