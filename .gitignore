@@ -20,3 +20,5 @@ Thumbs.db
 instance/
 
 .ipynb_checkpoints/
+
+virtualenv/

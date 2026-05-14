@@ -2,17 +2,19 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 from flask_mysqldb import MySQL
+import os
 
 app = Flask(__name__)
 
 # Config MySQL
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '@Thanares-07'
-app.config['MYSQL_DB'] = 'creditafrica'
+app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST')
+app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER')
+app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_ROOT_PASSWORD')
+app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
 
 mysql = MySQL(app)
 model = joblib.load('credit_model.pkl')
+
 
 def credit_score(probability_of_default):
     score = round((1 - probability_of_default) * 100, 1)
@@ -30,6 +32,7 @@ def credit_score(probability_of_default):
         couleur = "red"
     return {"score": score, "label": label,
             "recommandation": recommandation, "couleur": couleur}
+
 
 @app.route('/')
 def index():
