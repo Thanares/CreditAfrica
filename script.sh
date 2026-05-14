@@ -1,5 +1,5 @@
-if [ ! -f filename ]; then
+if [ ! -f credit_model.pkl ]; then
     python train_model.py
 fi
 
-python manage.py app.py
+python app.py
