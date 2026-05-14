@@ -2,6 +2,7 @@ import pandas as pd
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+import numpy as np
 
 df = pd.read_csv('data/cs-training.csv')
 df = df.drop(columns=['Unnamed: 0'])
@@ -26,8 +27,6 @@ model.fit(X_train, y_train)
 joblib.dump(model, 'credit_model.pkl')
 print("Modèle sauvegardé !")
 
-import matplotlib.pyplot as plt
-import numpy as np
 
 features = X.columns
 importances = model.feature_importances_
@@ -35,3 +34,4 @@ indices = np.argsort(importances)[::-1]
 
 for i in range(len(features)):
     print(f"{features[indices[i]]}: {importances[indices[i]]:.4f}")
+
